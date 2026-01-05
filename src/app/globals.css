@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #020617;
+  --primary: #0f172a;
+  --secondary: #64748b;
+  --muted: #f1f5f9;
+  --accent: #3b82f6;
+  --border: #e2e8f0;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --primary: #f8fafc;
+  --secondary: #94a3b8;
+  --muted: #1e293b;
+  --accent: #3b82f6;
+  --border: #1e293b;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased;
+  }
+}
+
+/* Tool Context Classes - Quiet UI Principles */
+.quiet-sidebar {
+  background: var(--background);
+  border-right: 1px solid var(--border);
+  transition: all 0.2s ease-in-out;
+}
+
+.data-card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  transition: transform 0.1s ease;
+}
+
+.data-card:hover {
+  @apply shadow-sm;
+}
